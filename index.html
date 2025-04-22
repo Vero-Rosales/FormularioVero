@@ -1,91 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Formulario Terriblemente Diseñado</title>
-    <style>
-      body {
-        background: linear-gradient(
-          45deg,
-          #ff00ff,
-          #00ffff
-        ); /* fondo mareante */
-        font-family: "Papyrus", fantasy; /* fuente poco legible */
-        color: #ffffff; /* mala combinación con el fondo */
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Mal Diseñado</title>
+  <style>
+    body {
+      background-color: #ff00ff;
+      font-family: "Comic Sans MS", cursive;
+      color: yellow;
+    }
 
-      form {
-        margin: 5px;
-        padding: 100px 10px;
-        background-color: rgba(255, 255, 255, 0.2); /* poca visibilidad */
-        width: 90vw;
-        border: 10px groove red;
-        box-shadow: inset 0 0 50px #000;
-      }
+    h1 {
+      text-align: center;
+      font-size: 60px;
+      color: lime;
+    }
 
-      label {
-        display: inline; /* no se alinean bien */
-        font-size: 9px;
-        color: yellow;
-      }
+    form {
+      width: 90%;
+      margin: 0 auto;
+      background-color: cyan;
+      padding: 10px;
+      border: 5px dashed red;
+    }
 
-      select,
-      input,
-      textarea {
-        width: 50px; /* extremadamente pequeños */
-        font-size: 6px;
-        background-color: #222;
-        color: #222; /* texto del mismo color que el fondo */
-        border: none;
-      }
+    label {
+      font-size: 24px;
+      display: block;
+      margin-top: 5px;
+    }
 
-      textarea {
-        resize: none; /* no se puede ajustar */
-        height: 30px;
-      }
+    input, textarea {
+      width: 95%;
+      padding: 2px;
+      font-size: 18px;
+      margin-bottom: 3px;
+      border: 3px dotted green;
+      background-color: #f5f5dc;
+      color: darkblue;
+    }
 
-      button {
-        font-size: 5px;
-        background: none;
-        border: none;
-        color: lime;
-        cursor: crosshair;
-      }
+    /* PROBLEMA DE DISEÑO AL LLENAR */
+    input:focus, textarea:focus {
+      background-color: #222; /* Fondo oscuro */
+      color: #333; /* Texto casi igual de oscuro */
+      outline: none;
+    }
 
-      button:hover {
-        background-color: hotpink;
-        transform: rotate(20deg);
-      }
-    </style>
-  </head>
-  <body>
-    <form>
-      <!-- No hay etiquetas asociadas correctamente -->
-      <div>
-        Nombre completo:
-        <select>
-          <option>---</option>
-          <option>Juan</option>
-          <option>Carlitos</option>
-          <option>Otra persona</option>
-        </select>
-      </div>
+    button {
+      background-color: orange;
+      color: white;
+      font-size: 32px;
+      padding: 5px 50px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 
-      <div>
-        Correo electrónico:
-        <input type="text" />
-      </div>
+    button:hover {
+      background-color: black;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contáctanos!!!</h1>
+  <form action="https://example.com/form-handler" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
 
-      <div>
-        Tu opinión importa:
-        <textarea></textarea>
-      </div>
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
 
-      <!-- Botones sin accesibilidad ni tamaño -->
-      <div>
-        <button>Enviar</button>
-        <button>Cancelar</button>
-      </div>
-    </form>
-  </body>
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+    <button type="submit">ENVIAR</button>
+  </form>
+</body>
 </html>
